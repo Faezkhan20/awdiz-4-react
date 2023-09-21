@@ -11,9 +11,20 @@ import Effect3 from './components/15-09/Effect3';
 import Effect4 from './components/15-09/Effect4';
 import Params from './components/15-09/Params';
 import SingleProduct from './components/15-09/SingleProduct';
+import Mapping from './components/16-09/Mapping';
+import Ternary from './components/16-09/Ternary';
+
+import { useState } from 'react';
+import StyledComponents from './components/16-09/StyledComponents';
+import Counterse from './components/16-09/Counterse';
+import DynamicStyles from './components/20-09/DynamicStyles';
+
+
+
 
 
 function App() {
+  const [loggedIn, setIsLoggedIn] = useState(false)
   return (
     <div className="App">
       <Routes>
@@ -28,6 +39,11 @@ function App() {
         <Route exact path='/effect4' element={<Effect4 />} />
         <Route exact path='/params' element={<Params />} />
         <Route exact path='/singleProduct/:id/' element={<SingleProduct />} />
+        <Route exact path='/mapping' element={<Mapping kuchbhi={'Hii'} names={["faez","amaan","awdiz","kohli","virat"]} />} />
+        <Route exact path='/ternary' element={<Ternary loggedIn={loggedIn} setIsLoggedIn={setIsLoggedIn}  />} />
+        <Route exact path='/styled-components' element={<StyledComponents/>}/>
+        <Route exact path='/counterse' element={<Counterse />}/>
+        <Route exact path='/dynamic-styles' element={<DynamicStyles />}/>
 
       </Routes>
     </div>
