@@ -1,0 +1,22 @@
+#promain1{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+
+}
+
+
+#promain{
+   border: 1px solid black;
+   width: 23%;
+   margin-bottom: 10px;
+}
+
+#proimage{
+    width: 80%;
+    height: 330px;
+}
+#probutton{
+
+  
+}

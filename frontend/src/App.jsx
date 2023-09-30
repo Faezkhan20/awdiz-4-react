@@ -18,7 +18,12 @@ import { useState } from 'react';
 import StyledComponents from './components/16-09/StyledComponents';
 import Counterse from './components/16-09/Counterse';
 import DynamicStyles from './components/20-09/DynamicStyles';
-
+import ChildrenProps from './components/22-09/ChildrenProps';
+import RegisterReact from './components/22-09/RegisterReact';
+import Timer from './components/29-09/Timer';
+import PageNotFound from './components/29-09/PageNotFound';
+import { ClassComponent } from './components/29-09/ClassComponent';
+import Product from './components/30-09/Product';
 
 
 
@@ -44,6 +49,13 @@ function App() {
         <Route exact path='/styled-components' element={<StyledComponents/>}/>
         <Route exact path='/counterse' element={<Counterse />}/>
         <Route exact path='/dynamic-styles' element={<DynamicStyles />}/>
+        <Route exact path='childrenprops' element={<ChildrenProps/>} />
+        <Route exact path='registerreact' element={<RegisterReact/>} />
+        <Route exact path='timer' element={<Timer/>} />
+        <Route exact path='pagenotfound' element={<PageNotFound/>} />
+        <Route exact path='classcomponent' element={<ClassComponent/>} />
+        <Route exact path='product' element={<Product/>} />
+        
 
       </Routes>
     </div>

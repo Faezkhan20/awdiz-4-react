@@ -1,4 +1,5 @@
 import {useNavigate} from 'react-router-dom'
+import toast from "react-hot-toast";
 
 function Homepage() {
 
@@ -28,6 +29,11 @@ function Homepage() {
             <button id='logincss' onClick={()=>router('/dynamic-styles')}>go to dynamic styled</button>
             <button id='logincss' onClick={()=>router('/ternary')}>go ternary</button>
             <button id='logincss' onClick={()=>router('/counterse')}>go to counterse</button>
+            <button id='logincss' onClick={()=>router('/pagenotfound')}>go to pagenotfound</button>
+            <button id='logincss' onClick={()=>router('/classcomponent')}>go to classcomponent</button>
+            <button id ='logincss' onClick={() => toast.error("Clickedd")}>Click for toast error</button>
+            <button id ='logincss' onClick={() => toast.success("Clickedd")}>Click for toast success</button> 
+            <button id='logincss' onClick={()=>router('/product')}>go to product page</button>
 
            
 
