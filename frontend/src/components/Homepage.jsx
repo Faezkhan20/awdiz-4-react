@@ -34,6 +34,8 @@ function Homepage() {
             <button id ='logincss' onClick={() => toast.error("Clickedd")}>Click for toast error</button>
             <button id ='logincss' onClick={() => toast.success("Clickedd")}>Click for toast success</button> 
             <button id='logincss' onClick={()=>router('/product')}>go to product page</button>
+            <button id='logincss' onClick={()=>router('/add-product')}>go to add- product page</button>
+            <button id='logincss' onClick={()=>router('/use-memo')}>go to usememo page</button>
 
            
 

@@ -8,15 +8,24 @@
 
 #promain{
    border: 1px solid black;
-   width: 23%;
-   margin-bottom: 10px;
+   width: 21%;
+   margin-bottom: 20px;
+    height: 470px;
+    margin-top: 30px;
+    background-color: rgba(251, 247, 242, 0.56);
+    box-shadow: 2px 1px 10px 1px;
 }
 
 #proimage{
-    width: 80%;
-    height: 330px;
+    width: 60%;
+    height: 230px;
+    margin-top: 20px;
+   
+
 }
 #probutton{
-
+ font-size: 15px;
+ background-color: black;
+ color: white;
   
 }

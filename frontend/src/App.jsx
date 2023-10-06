@@ -24,6 +24,9 @@ import Timer from './components/29-09/Timer';
 import PageNotFound from './components/29-09/PageNotFound';
 import { ClassComponent } from './components/29-09/ClassComponent';
 import Product from './components/30-09/Product';
+import SingleProductNew from './components/01-10/SingleProductNew';
+import AddProduct from './components/04-10/AddProduct';
+import UseMemo from './components/06-10/UseMemo';
 
 
 
@@ -55,6 +58,9 @@ function App() {
         <Route exact path='pagenotfound' element={<PageNotFound/>} />
         <Route exact path='classcomponent' element={<ClassComponent/>} />
         <Route exact path='product' element={<Product/>} />
+        <Route exact path='single-product/:id' element={<SingleProductNew/>} />
+        <Route exact path='/add-product' element={<AddProduct/>} />
+        <Route exact path='/use-memo' element={<UseMemo/>} />
         
 
       </Routes>

@@ -2,8 +2,11 @@ import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import toast from 'react-hot-toast'
 import "./Product.css"
+import { useNavigate } from 'react-router-dom'
 
 const Product = () => {
+    const router = useNavigate();
+
     const [product,setproduct]=useState([])
 
 
@@ -25,7 +28,7 @@ const Product = () => {
     <div>
         { product?.length? <div id='promain1'>
              {product.map((pro)=>(
-         <div id='promain'> 
+         <div  onClick={() => router(`/single-product/${pro.id}`)} id='promain'> 
             <img id='proimage' src={pro.image}/>
             <h3>Name : {pro.title}</h3> 
             <h4>Price : {pro.price} $</h4> 
