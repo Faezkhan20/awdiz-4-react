@@ -27,15 +27,23 @@ import Product from './components/30-09/Product';
 import SingleProductNew from './components/01-10/SingleProductNew';
 import AddProduct from './components/04-10/AddProduct';
 import UseMemo from './components/06-10/UseMemo';
+import TestReducer from './components/08-10/TestReducer';
+import CustomHook from './components/13-10/CustomHook';
+import CustomHookLS from './components/13-10/CustomHookLS';
+
 
 
 
 
 function App() {
+
   const [loggedIn, setIsLoggedIn] = useState(false)
   return (
     <div className="App">
       <Routes>
+   ?
+            {/* <h1>Counter : {state.count}</h1> */}
+            {/* <button onClick={() => dispatch({type : "Increment"})} >Increment+</button><br/><br/>    */}
         <Route path='/' element={<Homepage />} />
         <Route path='/login' element={<Login />} />
         <Route path='/register' element={<Register />} />
@@ -61,6 +69,9 @@ function App() {
         <Route exact path='single-product/:id' element={<SingleProductNew/>} />
         <Route exact path='/add-product' element={<AddProduct/>} />
         <Route exact path='/use-memo' element={<UseMemo/>} />
+        <Route exact path='/test-reducer' element={<TestReducer/>} />
+        <Route exact path='/customhook' element={<CustomHook />} />
+        <Route exact path='/customhookls' element={<CustomHookLS />} />
         
 
       </Routes>

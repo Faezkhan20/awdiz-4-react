@@ -19,8 +19,8 @@ const RegisterReact = () => {
         if (userData.name && userData.email && userData.password) {
             if (userData.password.length >= 8) {
                 try {
-                    const response = await axios.post("http://localhost:8000/register", { userData });
-                    // const response = { data: { success: true } };
+                    // const response = await axios.post("http://localhost:8000/register", { userData });
+                    const response = { data: { success: true } };
                     if (response.data.success) {
                         alert("Registeration successfull.")
                         setUserData({ name: "", email: "", password: "" })

@@ -7,7 +7,8 @@ const Mapping = ({ names, kuchbhi }) => {
     return (
         <div>
             <h1>Mapping</h1>
-            {names.map((name, i) => (<div>
+            {names.map((name, i) => (
+            <div>
                 <h3>Student Name - {name}</h3>
                 <h2>Student id -{i}</h2>
             </div>))}

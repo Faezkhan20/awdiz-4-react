@@ -6,15 +6,15 @@ function Counter(){
     const [counter,setCounter]=useState(0);
     console.log(counter,"counter")
 
-    const [liked,setLiked]=useState(false);
-    console.log(liked,"liked")
+    // const [liked,setLiked]=useState(false);
+    // console.log(liked,"liked")
 
-    function multitask(){
+    // function multitask(){
       
-        setLiked((flag)=> !flag);
-        setCounter((prevValue) => prevValue + 1)
+    //     setLiked((flag)=> !flag);
+    //     setCounter((prevValue) => prevValue + 1)
 
-    }
+    // }
     
     return(
         <div>
@@ -23,7 +23,7 @@ function Counter(){
             <button onClick={() => setCounter((prevValue) => prevValue + 1)}>+ counter</button>
             <button onClick={() => setCounter((faez) => faez - 1)} >- Counter</button>
             <button onClick={() => setCounter((prevValue) => prevValue + 10)}>+10 counter</button>
-            <button onClick={multitask}>Like ?</button>
+            {/* <button onClick={multitask}>Like ?</button> */}
             
         </div>
     )
