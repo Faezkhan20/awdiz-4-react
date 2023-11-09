@@ -61,7 +61,7 @@ function App() {
         <Route exact path='/counterse' element={<Counterse />}/>
         <Route exact path='/dynamic-styles' element={<DynamicStyles />}/>
         <Route exact path='childrenprops' element={<ChildrenProps/>} />
-        <Route exact path='registerreact' element={<RegisterReact/>} />
+        <Route exact path='register2' element={<RegisterReact/>} />
         <Route exact path='timer' element={<Timer/>} />
         <Route exact path='pagenotfound' element={<PageNotFound/>} />
         <Route exact path='classcomponent' element={<ClassComponent/>} />
