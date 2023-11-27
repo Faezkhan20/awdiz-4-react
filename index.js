@@ -68,3 +68,4 @@
 // syntax1
 // var array =[1,2,3,4]
 // array.forEach((e) => console.log(e))
+

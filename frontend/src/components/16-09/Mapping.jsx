@@ -7,10 +7,10 @@ const Mapping = ({ names, kuchbhi }) => {
     return (
         <div>
             <h1>Mapping</h1>
-            {names.map((name, i) => (
+            {names.map((name, faez) => (
             <div>
                 <h3>Student Name - {name}</h3>
-                <h2>Student id -{i}</h2>
+                <h2>Student id -{faez}</h2>
             </div>))}
 {/* 
             {names.map((name, i) => (
@@ -23,3 +23,5 @@ const Mapping = ({ names, kuchbhi }) => {
 }
 
 export default Mapping
+
+

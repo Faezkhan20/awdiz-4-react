@@ -6,6 +6,7 @@ import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom'
 import { Toaster } from 'react-hot-toast';
 import GlobalContext from './Context/GlobalContext';
+import ParentAuthContext from './Context/AuthContext';
 
 
 
@@ -39,9 +40,11 @@ root.render(
           },
         }}
       />
+      <ParentAuthContext>
        <GlobalContext>
       <App />
       </GlobalContext>
+      </ParentAuthContext>
     
     
       {/* if we use function inside self closing brackets it behaves like component */}
