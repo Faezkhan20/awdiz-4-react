@@ -4,10 +4,9 @@ import './index.css';
 import App from './App'
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom'
-import { Toaster } from 'react-hot-toast';
-import GlobalContext from './Context/GlobalContext';
+import { Toaster } from 'react-hot-toast';  
 import ParentAuthContext from './Context/AuthContext';
-
+import GlobalContext from './Context/GlobalContext';
 
 
 

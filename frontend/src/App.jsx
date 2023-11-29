@@ -30,6 +30,10 @@ import UseMemo from './components/06-10/UseMemo';
 import TestReducer from './components/08-10/TestReducer';
 import CustomHook from './components/13-10/CustomHook';
 import CustomHookLS from './components/13-10/CustomHookLS';
+import YourProducts from './components/YourProducts';
+import UpdateProduct from './components/UpdateProduct';
+import Cart from './components/Cart';
+import Navbar from './components/common/Navbar';
 
 
 
@@ -40,10 +44,13 @@ function App() {
   const [loggedIn, setIsLoggedIn] = useState(false)
   return (
     <div className="App">
+       <Navbar />
       <Routes>
-   ?
-            {/* <h1>Counter : {state.count}</h1> */}
-            {/* <button onClick={() => dispatch({type : "Increment"})} >Increment+</button><br/><br/>    */}
+        
+        
+        {/* <h1>Counter : {state.count}</h1> */}
+        {/* <button onClick={() => dispatch({type : "Increment"})} >Increment+</button><br/><br/>    */}
+       
         <Route path='/' element={<Homepage />} />
         <Route path='/login' element={<Login />} />
         <Route path='/register' element={<Register />} />
@@ -54,25 +61,29 @@ function App() {
         <Route exact path='/effect3' element={<Effect3 />} />
         <Route exact path='/effect4' element={<Effect4 />} />
         <Route exact path='/params' element={<Params />} />
-        <Route exact path='/singleProduct/:id/' element={<SingleProduct />} />
-        <Route exact path='/mapping' element={<Mapping kuchbhi={'Hii'} names={["faez","amaan","awdiz","kohli","virat"]} />} />
-        <Route exact path='/ternary' element={<Ternary loggedIn={loggedIn} setIsLoggedIn={setIsLoggedIn}  />} />
-        <Route exact path='/styled-components' element={<StyledComponents/>}/>
-        <Route exact path='/counterse' element={<Counterse />}/>
-        <Route exact path='/dynamic-styles' element={<DynamicStyles />}/>
-        <Route exact path='childrenprops' element={<ChildrenProps/>} />
-        <Route exact path='register2' element={<RegisterReact/>} />
-        <Route exact path='timer' element={<Timer/>} />
-        <Route exact path='pagenotfound' element={<PageNotFound/>} />
-        <Route exact path='classcomponent' element={<ClassComponent/>} />
-        <Route exact path='product' element={<Product/>} />
-        <Route exact path='single-product/:id' element={<SingleProductNew/>} />
-        <Route exact path='/add-product' element={<AddProduct/>} />
-        <Route exact path='/use-memo' element={<UseMemo/>} />
-        <Route exact path='/test-reducer' element={<TestReducer/>} />
+        <Route exact path='/singleProduct/:id/:name' element={<SingleProduct />} />
+        <Route exact path='/mapping' element={<Mapping kuchbhi={'Hii'} names={["faez", "amaan", "awdiz", "kohli", "virat"]} />} />
+        <Route exact path='/ternary' element={<Ternary loggedIn={loggedIn} setIsLoggedIn={setIsLoggedIn} />} />
+        <Route exact path='/styled-components' element={<StyledComponents />} />
+        <Route exact path='/counterse' element={<Counterse />} />
+        <Route exact path='/dynamic-styles' element={<DynamicStyles />} />
+        <Route exact path='childrenprops' element={<ChildrenProps />} />
+        <Route exact path='register2' element={<RegisterReact />} />
+        <Route exact path='timer' element={<Timer />} />
+        <Route exact path='pagenotfound' element={<PageNotFound />} />
+        <Route exact path='classcomponent' element={<ClassComponent />} />
+        <Route exact path='product' element={<Product />} />
+        <Route exact path='single-product/:id' element={<SingleProductNew />} />
+        <Route exact path='/add-product' element={<AddProduct />} />
+        <Route exact path='/use-memo' element={<UseMemo />} />
+        <Route exact path='/test-reducer' element={<TestReducer />} />
         <Route exact path='/customhook' element={<CustomHook />} />
         <Route exact path='/customhookls' element={<CustomHookLS />} />
-        
+        <Route exact path='/your-products' element={<YourProducts />} />
+        <Route exact path='/update-product/:id' element={<UpdateProduct />} />
+        <Route exact path='/cart' element={<Cart />} />
+
+
 
       </Routes>
     </div>

@@ -50,6 +50,7 @@ function Homepage() {
             <button id='logincss' onClick={()=>router('/use-memo')}>go to usememo page</button>
             <button id='logincss' onClick={() => router("/test-reducer")} >Go to TestReducer</button>
             <button id='logincss' onClick={() => {Logout()}}>Logout</button>
+            <button id='logincss' onClick={()=>router('/your-products')}>Yours product</button>
 
            
 

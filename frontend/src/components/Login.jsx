@@ -1,72 +1,66 @@
-import { useNavigate } from "react-router-dom"
-// import api from "../Context/axiosConfig";
-import { useContext, useState } from "react";
-import toast from "react-hot-toast";
-import { AuthContext } from "../Context/AuthContext";
-import api from "../Helpers/AxiosConfig";
+import { useNavigate } from 'react-router-dom';
 
-function Login(){
-    
-    const [userData, setUserData] = useState({email: "", password: "" })
+import { useContext, useState } from 'react';
+import toast from 'react-hot-toast';
+import { AuthContext } from '../Context/AuthContext';
+import api from '../Helpers/AxiosConfig';
 
-    const rout = useNavigate();
-    console.log(userData)
-    const {Login , } = useContext(AuthContext)
 
-    const HandleChange = (event) => {
-        // console.log(event.target.value, "- value,", event.target.name, "- name")
-        setUserData({ ...userData, [event.target.name]: event.target.value });
+
+function Login() {
+    const [userData, setUserData] = useState({ email: "", password: "" });
+    const router = useNavigate();
+    const { Login, state } = useContext(AuthContext)
+    // console.log(userData,"userdata")
+
+    const handleChange = (event) => {
+        // console.log(event.target.value, "value", event.target.name, "name")
+        setUserData({ ...userData, [event.target.name]: event.target.value })
     }
 
     const sendDataToBackend = async (event) => {
-        event.preventDefault();   //url bar me type ki hui value aajati h isiliye
-        // alert("Data Submitted to backend")
+        event.preventDefault();
+        // alert("Data submitted to backend..")
         if (userData.email && userData.password) {
             if (userData.password.length >= 8) {
                 try {
                     const response = await api.post("/auth/login", { userData });
-                    // const response = {data: {success : true}}
-                    if (response.data.success) {
-                        localStorage.setItem("My-token" , JSON.stringify(response.data.token))
-                        Login(response.data.user)
-                        console.log(response.data, "- Response")
-                        toast.success("Login Successfull.")
-                        setUserData({email: "", password: "" })
-                        rout("/")
-                    } else {
-                        throw new Error("Something went wrong")
-                    }
-                }
-                catch (error) {
-                    toast.error(error?.message)
-                    console.log(error, "error-hai")
-                }
-            }
-            else {
-                toast.error("Password must be 8 digit")
-            }
-        }
 
-        else {
-            toast.error("All fields are mandatory!")
+                    // const response = { data: { success: true } };
+                    if (response.data.success) {
+                        localStorage.setItem("my-token", JSON.stringify(response.data.token))
+                        Login(response.data.user);
+                        // console.log(response.data, "response data")
+                        toast.success("Login successfull.")
+                        setUserData({ email: "", password: "" })
+                        router("/")
+                    } else {
+                        throw new Error("Something went wrong..")
+                    }
+                } catch (error) {
+                    toast.error(error?.response.data.message)
+                    console.log(error, "error here")
+                }
+            } else {
+                alert("Password must be 8 digit.")
+            }
+        } else {
+            alert("Please fill the all values..")
         }
     }
 
     return (
         <div>
-            <form onSubmit={sendDataToBackend} autoComplete="off" >
-                <h1>Login</h1>
-
-                <label>Email</label><br />
-                <input name='email' type="email" onChange={HandleChange} autoComplete="off" /><br />
-
-                <label>Password</label><br />
-                <input name='password' type="password" onChange={HandleChange} autoComplete="off" /><br />
-
-                <input type="Submit" value='Login' /><br />
+            <h1>Login</h1>
+            <form onSubmit={sendDataToBackend}>
+                <label>Email :</label><br />
+                <input name='email' type='email' onChange={handleChange} /> <br />
+                <label>Password :</label><br />
+                <input name='password' type='password' onChange={handleChange} /> <br />
+                <input type='submit' value="Login here" /> <br />
             </form>
         </div>
     )
 }
 
-export default Login
+export default Login;
