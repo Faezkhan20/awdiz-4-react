@@ -34,6 +34,7 @@ import YourProducts from './components/YourProducts';
 import UpdateProduct from './components/UpdateProduct';
 import Cart from './components/Cart';
 import Navbar from './components/common/Navbar';
+import SingleProductPage from './components/01-10/SingleProductNew';
 
 
 
@@ -72,8 +73,8 @@ function App() {
         <Route exact path='timer' element={<Timer />} />
         <Route exact path='pagenotfound' element={<PageNotFound />} />
         <Route exact path='classcomponent' element={<ClassComponent />} />
-        <Route exact path='product' element={<Product />} />
-        <Route exact path='single-product/:id' element={<SingleProductNew />} />
+        <Route exact path='products' element={<Product />} />
+        <Route exact path='/single-product-page/:id' element={<SingleProductPage />} />
         <Route exact path='/add-product' element={<AddProduct />} />
         <Route exact path='/use-memo' element={<UseMemo />} />
         <Route exact path='/test-reducer' element={<TestReducer />} />

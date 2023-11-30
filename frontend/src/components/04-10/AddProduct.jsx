@@ -1,8 +1,7 @@
 import axios from 'axios'
 import React, { useContext, useEffect, useState } from 'react'
 import toast from 'react-hot-toast'
-
-
+import './AddProduct.css'
 import { useNavigate } from 'react-router-dom'
 import api from '../../Helpers/AxiosConfig'
 import { AuthContext } from '../../Context/AuthContext'
@@ -52,9 +51,9 @@ const AddProduct = () => {
     }, [state])
 
     return (
-        <div>
-            <h1>Add Product</h1>
-            <form onSubmit={handleSubmit}>
+        <div id='Addproductdiv'>
+            <h1 id='addproducth1'>Add Product</h1>
+            <form id='Addproductform' onSubmit={handleSubmit}>
                 <label>Porduct Name</label><br />
                 <input type='text' name="name" onChange={handleChange} value={productData.name} /><br />
                 <label>Porduct Category</label><br />
@@ -63,7 +62,7 @@ const AddProduct = () => {
                 <input type='number' name='price' onChange={handleChange} value={productData.price} /><br />
                 <label>Porduct Image</label><br />
                 <input type='url' name='image' onChange={handleChange} value={productData.image} /><br />
-                <input type='submit' />
+                <button id='addproductbutton'>Submit</button>
             </form>
         </div >
     )

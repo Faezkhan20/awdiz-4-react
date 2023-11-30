@@ -3,6 +3,7 @@ import toast from 'react-hot-toast'
 import { useNavigate } from 'react-router-dom'
 import api from '../Helpers/AxiosConfig'
 import { AuthContext } from '../Context/AuthContext'
+import './YourProduct.css'
 
 
 const YourProducts = () => {
@@ -51,13 +52,13 @@ const YourProducts = () => {
     }, [state])
 
     return (
-        <div>
+        <div id='yourproductdiv'>
             {yourProducts.map((pro) => (
-                <div key={pro._id} >
-                    <img src={pro.image} />
+                <div id='yourproductmain' key={pro._id} >
+                    <img id='imgyourproduct' src={pro.image} />
                     <h3>{pro.name}</h3>
-                    <button onClick={() => router(`/update-product/${pro._id}`)}>Update ?</button>
-                    <button onClick={() => deleteProduct(pro._id)}>Delete ?</button>
+                    <button className='yourproductmain-button' onClick={() => router(`/update-product/${pro._id}`)}>Update ?</button>
+                    <button className='yourproductmain-button' onClick={() => deleteProduct(pro._id)}>Delete ?</button>
                 </div>
             ))}
         </div>

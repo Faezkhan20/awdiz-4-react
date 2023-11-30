@@ -1,37 +1,54 @@
-import React, { useContext, useEffect, useState } from 'react'
-
-import toast from 'react-hot-toast';
-import { useNavigate } from 'react-router-dom';
-import { AuthContext } from '../Context/AuthContext';
+import React, { useContext, useEffect, useState } from "react";
+import { AuthContext } from "../Context/AuthContext";
+import toast from "react-hot-toast";
+import { useNavigate } from "react-router-dom";
 
 const Cart = () => {
-    const { cartProducts, setCartProducts } = useState([]);
+  const { state } = useContext(AuthContext);
+  const [cartProducts, setCartProducts] = useState([]);
+  const router = useNavigate();
 
-    const { state } = useContext(AuthContext);
-    const router = useNavigate();
-
-    async function getYourCartProducts() {
-        alert("Inside function") // assignment - complete this bloack
+  async function getYourCartProduct() {
+    try {
+      
+    } catch (error) {
+      console.log(error)
     }
+  }
 
-    useEffect(() => {
-        if (state?.user && state?.user?.id === undefined) {
-            toast.error("Please login to access your cart products, redirecting yout login page in 3 sec.")
-            setTimeout(() => {
-                router("/login")
-            }, 3000)
-        } else {
-            if (state?.user?.id) {
-                getYourCartProducts()
-            }
 
+  useEffect(() => {
+    try {
+      if (state?.user && state?.user?.id === undefined) {
+        toast.error("Please login to access your cart products.")
+        setTimeout(() => {
+          router("/login")
+        }, 2000);
+      } else {
+        if (state?.user?.id) {
+          getYourCartProduct()
         }
-    }, [state])
+      }
+    } catch (error) {
+      console.log(error)
+    }
+  }, [state])
 
-
-    return (
-        <div>Cart</div>
-    )
+  return (
+    <>
+      
+      <div>
+            {cartProducts.map((pro) => (
+                <div key={pro._id} >
+                    <img src={pro.image} />
+                    <h3>{pro.name}</h3>
+                    {/* <button onClick={() => router(`/update-product/${pro._id}`)}>Update ?</button> */}
+                    {/* <button onClick={() => deleteProduct(pro._id)}>Delete ?</button> */}
+                </div>
+            ))}
+        </div>
+      
+    </>
+  )
 }
-
-export default Cart
+export default Cart;

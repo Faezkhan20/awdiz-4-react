@@ -2,7 +2,8 @@ import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import toast from 'react-hot-toast';
-import api from '../../Helpers/AxiosConfig';
+import api from '../../Helpers/AxiosConfig'
+import './RegisterReact.css';
 
 
 const RegisterReact = () => {
@@ -43,16 +44,16 @@ const RegisterReact = () => {
     }
 
     return (
-        <div>
-            <h1>Register</h1>
-            <form onSubmit={sendDataToBackend}>
+        <div id='Registerdiv'>
+            <h1 id='registerh1'>Register</h1>
+            <form id='registerform' onSubmit={sendDataToBackend}>
                 <label>Name :</label><br />
                 <input name='name' type='text' onChange={handleChange} /> <br />
                 <label>Email :</label><br />
                 <input name='email' type='email' onChange={handleChange} /> <br />
                 <label>Password :</label><br />
                 <input name='password' type='password' onChange={handleChange} /> <br />
-                <input type='submit' value="Register here" /> <br />
+                <button id='registerformbutton'>Register here</button> <br />
             </form>
         </div>
     )

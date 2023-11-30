@@ -4,6 +4,7 @@ import { useContext, useState } from 'react';
 import toast from 'react-hot-toast';
 import { AuthContext } from '../Context/AuthContext';
 import api from '../Helpers/AxiosConfig';
+import './Login.css'
 
 
 
@@ -50,14 +51,14 @@ function Login() {
     }
 
     return (
-        <div>
-            <h1>Login</h1>
-            <form onSubmit={sendDataToBackend}>
+        <div id='logindiv'>
+            <h1 id='loginh1'>Login</h1>
+            <form id='formlogin' onSubmit={sendDataToBackend}>
                 <label>Email :</label><br />
                 <input name='email' type='email' onChange={handleChange} /> <br />
                 <label>Password :</label><br />
                 <input name='password' type='password' onChange={handleChange} /> <br />
-                <input type='submit' value="Login here" /> <br />
+               <button>Login here</button>
             </form>
         </div>
     )

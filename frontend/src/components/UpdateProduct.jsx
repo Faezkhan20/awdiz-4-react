@@ -11,7 +11,7 @@ const UpdateProduct = () => {
 
     async function getProductData() {
         try {
-            const response = await api.post(`/product/get-single-product?id=${id}`)
+            const response = await api.get(`/product/get-single-product?id=${id}`)
             if (response.data.success) {
                 setProductData(response.data.product)
             }
@@ -48,6 +48,7 @@ const UpdateProduct = () => {
         <div>
             <h1>Update Product</h1>
             <form onSubmit={handleSubmit}>
+            <div><img src={productData.image} alt="" /></div>
                 <label>Name</label><br />
                 <input type='text' onChange={handleChange} value={productData.name} name='name' /><br />
                 <label>Price</label><br />

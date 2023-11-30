@@ -1,0 +1,36 @@
+#NavbarDiv {
+    display: flex;
+    justify-content: space-between;
+    height: 30px;
+    border: 2px solid black;
+    font-size: 20px;
+    cursor: pointer;
+  
+}
+
+
+#navbardiv2 {
+    width: 50%;
+    /* border: 1px solid red;   */
+    display: flex;
+    justify-content: space-around;
+    margin-right: 30px;
+    cursor: pointer;
+}
+#navbar3{
+    display: flex;
+    justify-content: space-between;
+    /* border: 1px solid red; */
+    width: 50%;
+    cursor: pointer;
+   
+  
+
+}
+#navbar4{
+    width: 20%;
+     /* border:1px solid red; */
+      display: flex;
+      justify-content: space-around;
+      cursor: pointer;
+}

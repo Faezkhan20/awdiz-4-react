@@ -1,0 +1,28 @@
+#yourproductdiv{
+    /* border: 1px solid red; */
+    display: flex;
+    
+}
+#yourproductmain{
+    border: 1px solid black;
+    margin: 30px;
+    
+}
+#imgyourproduct{
+    /* border: 1px solid red; */
+    height: 300px;
+}
+#yourproductmain button{
+    background-color:burlywood;
+    width: 130px;
+    height: 30px;
+    font-size: 18px;
+    transition: 0.2s;
+    cursor: pointer;
+}
+.yourproductmain-button:hover{
+ transform:scale(1.1);
+color: white;
+
+    
+}

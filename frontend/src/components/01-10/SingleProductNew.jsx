@@ -1,50 +1,75 @@
-import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom"
-import axios from 'axios';
-import './SingleProductNew.css'
+
+import React, { useContext, useEffect, useState } from 'react'
+import { useParams } from 'react-router-dom'
+import './SingleProductNew.css';
+import toast from 'react-hot-toast';
+import api from '../../Helpers/AxiosConfig';
+import { AuthContext } from '../../Context/AuthContext';
 
 const SingleProductNew = () => {
+    const [productData, setProductData] = useState({});
+    // console.log(productData, "productData")
     const { id } = useParams();
-    const [productData, SetProductData] = useState({})
+    const { state } = useContext(AuthContext);
+
+    async function Cart(id) {
+        if (state.user.id && id) {
+            try {
+                const response = await api.post("/user/add-cart", { userId: state.user.id, productId: id })
+                if (response.data.success) {
+                    toast.success(response.data.message)
+                }
+            } catch (error) {
+                console.log(error)
+            }
+        } else {
+            toast.error("Please login to add product to cart.")
+        }
+    }
 
     useEffect(() => {
-
         async function getSingleProductData() {
             try {
-                const { data } = await axios.get(`https://fakestoreapi.com/products/${id}`)
-                if (data) {
-                    SetProductData(data);
+                const { data } = await api.get(`/product/get-single-product?id=${id}`)
+                
+                if (data.success) {
+                    setProductData(data.product)
                 }
-            }catch(error){
-                console.log(error, "error")
+            } catch (error) {
+                // console.log(error)
+                alert(error)
             }
         }
         if (id) {
-            getSingleProductData()
+            getSingleProductData();
         }
     }, [id])
 
-    console.log(productData, " product data ");
+    console.log(productData, "productData")
+
     return (
         <div>
+            {productData?._id ?
+                <div id='parentDiv'>
+                    <div className='imgdiv' >
+                        <img style={{ width: "100%", height: "100%" }} src={productData.image} />
+                    </div>
+                    <div className='detailssec' >
+                        <h1 className='nameh1'>{productData.name}</h1>
+                        <h4 className='category2'>Category : {productData.category}</h4>
+                        {/* <h4>Description : {productData.description}</h4> */}
+                        <h4>Price : {productData.price}$</h4>
+                        {/* <h4>Rating : {productData.rating.rate}</h4> */}
+                        {/* <h4>Number of ratings : {productData.rating.count}</h4> */}
+                        {/* <i class="fa-brands fa-instagram"></i> */}
 
-            {productData?.id ?
-                <div className="screen-SPN">
-                    <div className="image-SPN" > <img src={productData.image} /> </div>
-
-                    <div className="discription-SPN" >
-                        <h3><span>NAME </span>: {productData.title}</h3>
-                        <h5><span>CATEGORY </span>: {productData.category}</h5>
-                        <h5><span>ABOUT</span> : {productData.description}</h5>
-                        <h3><span>PRICE</span> : {productData.price} $</h3>
-                        <h5><span>RATING</span> : {productData.rating.rate}</h5>
-                        <h5><span>RATING COUNT</span> : {productData.rating.count}</h5>
+                        <button id='cartbutton' onClick={() => Cart(productData._id)}>Add to Cart</button> 
                     </div>
                 </div>
                 :
-                <div>Loading...</div>}
-
-        </div >
+                <div>Loading..</div>
+            }
+        </div>
     )
 }
 

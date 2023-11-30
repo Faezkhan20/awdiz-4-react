@@ -1,29 +1,35 @@
 import React, { useContext } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { AuthContext } from '../../Context/AuthContext'
+import './Navbar.css'
 
 const Navbar = () => {
     const router = useNavigate()
     const { state, Logout } = useContext(AuthContext)
 
     return (
-        <div style={{ display: "flex", justifyContent: 'space-around', height: "40px", border: '2px solid black', fontSize: "20px" }}>
-            <div onClick={() => router('/')} style={{ width: '20%', border: "1px solid red" }}>Home</div>
-            <div style={{ width: '50%', border: "1px solid red", display: "flex", justifyContent: 'space-around' }}>
+        <div id='NavbarDiv'>
+            <div onClick={() => router('/')} style={{ width: '20%', }}>Home</div>
+            <div id='navbardiv2'>
                 <div onClick={() => router('/products')}>Products</div>
+                {/* <div onClick={() => router('/resgister2')}>Register</div> */}
+                
                 {state?.user?.id &&
-                    <div style={{ display: "flex", justifyContent: 'space-around' }}>
+                    <div id='navbar3'>
                         <div onClick={() => router('/add-product')}>Add Product </div>
                         <div onClick={() => router('/your-products')}>Your Products</div>
+                        
                     </div>
                 }
             </div>
-            <div style={{ width: '20%', border: "1px solid red", display: "flex", justifyContent: 'space-around' }}>
+            <div id='navbar4'>
                 {state?.user?.id ? <>
                     <div onClick={() => router('/profile')}>Profile</div>
                     <div onClick={() => router('/cart')}>Cart</div>
                     <div onClick={Logout}>Logout</div>
-                </> : <div onClick={() => router('/login')}>Login</div>}
+                </> :<div onClick={() => router('/login')}>Login</div>}
+
+                
             </div>
         </div >
     )

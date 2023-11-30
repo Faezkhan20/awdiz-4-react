@@ -1,0 +1,25 @@
+#loginh1{
+    /* border: 1px solid red; */
+    color: rgb(98, 89, 61);
+}
+#logindiv{
+    border: 1px solid red;
+    width: 30%;
+    margin: auto;
+    margin-top: 20px;
+    height: 300px;
+    background-color: bisque;
+    margin-top: 50px;
+}
+#formlogin button{
+    background-color:burlywood;
+    width: 120px;
+    height: 30px;
+    margin-top: 20px;
+    font-size: 18px;
+    transition: 0.1s;
+    cursor: pointer;
+}
+#formlogin button:hover{
+    transform: scale(1.1);
+}  
