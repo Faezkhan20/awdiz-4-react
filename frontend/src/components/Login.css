@@ -3,13 +3,14 @@
     color: rgb(98, 89, 61);
 }
 #logindiv{
-    border: 1px solid red;
+    border: 1px solid bisque;
     width: 30%;
     margin: auto;
     margin-top: 20px;
-    height: 300px;
+    height: 400px;
     background-color: bisque;
     margin-top: 50px;
+    border-radius: 10px;
 }
 #formlogin button{
     background-color:burlywood;
@@ -23,3 +24,19 @@
 #formlogin button:hover{
     transform: scale(1.1);
 }  
+#formlogin label{
+    /* border: 1px solid red; */
+    font-size: 18px;
+    font-weight: bold;
+    text-align: left;
+    /* width: 100%; */
+    margin-bottom: 10px;
+    
+}
+#formlogin{
+    /* border: 1px solid red; */
+    width: 70%;
+    margin: auto;
+    
+    
+}

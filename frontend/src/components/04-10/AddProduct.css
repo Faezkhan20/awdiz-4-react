@@ -23,5 +23,9 @@
 #addproductbutton:hover{
     transform: scale(1.1);
 }
+#Addproductform label{
+    font-size: 18px;
+    font-weight: bold;
+}
 
 

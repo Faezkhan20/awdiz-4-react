@@ -1,0 +1,39 @@
+#cartscreen{
+    border: 1px solid red;
+    /* display: flex; */
+    width: 100%;
+    
+
+}
+#cartmain{
+    border: 1px solid red;
+    display: flex;
+    justify-content: space-around;
+  
+    
+    
+}
+#cartcontent{
+    /* display: flex; */
+    border: 1px solid blue;
+    
+}
+#cartcontent img{
+    border: 1px solid red;
+    height: 250px;
+}
+#cartcontent button{
+    background-color: burlywood;
+    color: black;
+    width: 120px;
+    height: 30px;
+    font-size: 18px;
+    transition: 0.1s;
+    font-weight: bold;
+
+}
+
+#cartcontent button:hover{
+    transform: scale(1,1);
+    background-color: antiquewhite;
+}

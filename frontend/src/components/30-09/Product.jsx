@@ -36,9 +36,9 @@ const Product = () => {
                     <div onClick={() => router(`/single-product-page/${pro._id}`)} id='promain'>
                         <img id='proimage' src={pro.image} />
                         <h3>Name : {pro.name}</h3>
-                        <h4>Price : {pro.price} $</h4>
+                        <h4>Price : {pro.price}₹</h4>
                         <h2>category :{pro.category}</h2>
-                        <button id='probutton'>Add to cart</button>
+                        <button id='probutton'>VIEW</button>
                     </div>
 
                 ))}  </div> : <div>loading.....</div>}
