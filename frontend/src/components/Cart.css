@@ -6,7 +6,7 @@
 
 }
 #cartmain{
-    border: 1px solid red;
+    border: 1px solid black;
     display: flex;
     justify-content: space-around;
   
@@ -15,12 +15,13 @@
 }
 #cartcontent{
     /* display: flex; */
-    border: 1px solid blue;
+    border: 1px solid black;
     
 }
 #cartcontent img{
-    border: 1px solid red;
+    border: 1px solid black;
     height: 250px;
+    width: 90%;
 }
 #cartcontent button{
     background-color: burlywood;
